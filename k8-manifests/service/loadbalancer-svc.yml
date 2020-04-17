@@ -1,0 +1,17 @@
+#k8-manifests\service\nodeport-svc.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: loadbalancer-svc
+  labels:
+    stackroute-k8: nodeport-svc
+spec:
+  type: LoadBalancer
+  selector:
+    stackroute-k8: nginx
+  ports:
+   - nodePort: 32000
+     port: 80
+     targetPort: 80
+    
+  
