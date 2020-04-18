@@ -1,0 +1,17 @@
+#k8-manifests\service\nodeport-svc-2.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-svc-2
+  labels:
+    stackroute.k8: nodeport-svc-2
+spec:
+  type: NodePort
+  selector:
+    stackroute.k8: nginx-deployment-2
+  ports:
+   - nodePort: 32000
+     port: 90
+     targetPort: 80
+    
+  

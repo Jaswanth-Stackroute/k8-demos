@@ -1,4 +1,4 @@
-#k8-manifests\service\nodeport-svc.yml
+#k8-manifests\service\nodeport-svc-1.yml
 apiVersion: v1
 kind: Service
 metadata:
