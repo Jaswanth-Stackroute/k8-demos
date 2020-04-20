@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jaswanth-deployment-springboot-dockerdependency
+  labels:
+    stackroute.k8: jaswanth-deployment-springboot-dockerdependency
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      stackroute.k8: jaswanth-deployment-springboot-dockerdependency
+  template:
+    metadata:
+      labels:
+        stackroute.k8: jaswanth-deployment-springboot-dockerdependency
+    spec:
+      containers:
+      - name: springbootrestservice-with-dockerdependency
+        image: jaswanth1234/springboot-mongo-with-dockerdependency:0.0.1-SNAPSHOT
+        ports:
+        - containerPort: 8081

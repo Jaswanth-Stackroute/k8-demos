@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jaswanth-svc-nodeport-springbootcrud-dockerdependency
+  labels:
+    stackroute.k8: jaswanth-svc-nodeport-springbootcrud-dockerdependency
+spec:
+  type: NodePort
+  selector:
+    stackroute.k8: jaswanth-deployment-springboot-dockerdependency
+  ports:
+   - nodePort: 32200
+     port: 84
+     targetPort: 8081
+    
+  
