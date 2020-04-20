@@ -1,0 +1,29 @@
+
+
+
+APIs to test the Springboot RESTFUL service
+
+1) create a user
+Api - POST - <minikube-ip>/create?firstName=jaswanth&lastName=sunkara&age=22
+
+2) get a user
+
+Api - GET - <minikube-ip>/get?firstName=jaswanth 
+
+
+3) get all users
+
+Api - GET - <minkube-ip>/getAll
+
+4)update a user
+
+Api - PUT - <minikube-ip>/update?firstName=jaswanth&lastName=sunkara&age=23
+
+5)delete a user
+
+Api - DELETE - <minkube-ip>/delete?firstName=jaswanth 
+
+6) delete all users
+
+Api - DELETE - <minkube-ip>/deleteAll
+

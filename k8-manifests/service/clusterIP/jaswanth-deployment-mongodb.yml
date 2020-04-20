@@ -1,0 +1,21 @@
+apiVersion: apps/v1  
+kind: Deployment  
+metadata:  
+  name: mongodb  
+  labels:  
+    stackroute.k8: mongodb  
+spec:  
+  replicas: 1  
+  selector:  
+    matchLabels:  
+      stackroute.k8: mongodb  
+  template:  
+    metadata:  
+      labels:  
+        stackroute.k8: mongodb  
+    spec:  
+      containers:  
+        - name: mongodb  
+          image: mongo:3.6.6  
+          ports:  
+            - containerPort: 27017  

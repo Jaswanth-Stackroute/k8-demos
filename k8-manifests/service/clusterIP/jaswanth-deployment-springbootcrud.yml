@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jaswanth-deployment-springbootcrud
+  labels:
+    stackroute.k8: jaswanth-deployment-springbootcrud
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      stackroute.k8: jaswanth-deployment-springbootcrud
+  template:
+    metadata:
+      labels:
+        stackroute.k8: jaswanth-deployment-springbootcrud
+    spec:
+      containers:
+      - name: springbootrestservice
+        image: jaswanth1234/springboot-crud-mongo:latest
+        ports:
+        - containerPort: 8080

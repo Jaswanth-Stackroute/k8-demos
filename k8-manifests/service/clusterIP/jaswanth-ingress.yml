@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1beta1 # for versions before 1.14 use extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jaswanth-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    jaswanth.ingress.kubernetes.io/rewrite-target: / #Target URI where the traffic must be redirected
+
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /
+          backend:
+            serviceName: jaswanth-nodeport-svc-springbootcrud
+            servicePort: 80
+  
